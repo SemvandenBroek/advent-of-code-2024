@@ -1,7 +1,7 @@
 import _ from "lodash";
 
 export function solution(input: string) {
-  const lines = input.split('\n');
+  const lines = input.split("\n");
 
   const leftList: number[] = [];
   const rightList: number[] = [];
@@ -11,7 +11,7 @@ export function solution(input: string) {
   const numberCount = new Map<number, number>();
 
   for (const line of lines) {
-    const match= line.match(/(\d+)\s+(\d+)/);
+    const match = line.match(/(\d+)\s+(\d+)/);
     if (!match) continue;
 
     const left = match[1];
@@ -38,5 +38,5 @@ export function solution(input: string) {
     similarityScore += left * (numberCount.get(left) ?? 0);
   }
 
-  return {totalDistance, similarityScore};
+  return { totalDistance, similarityScore };
 }
