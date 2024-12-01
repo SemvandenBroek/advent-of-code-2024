@@ -531,27 +531,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"AdventOfCode2024@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "AdventOfCode2024@workspace:."
-  dependencies:
-    "@eslint/js": "npm:^9.16.0"
-    "@types/chai": "npm:^5"
-    "@types/lodash": "npm:^4"
-    "@types/mocha": "npm:^10"
-    "@types/node": "npm:^20.17.9"
-    chai: "npm:^5.1.2"
-    eslint: "npm:^9.16.0"
-    globals: "npm:^15.12.0"
-    lodash: "npm:^4.17.21"
-    mocha: "npm:^10.8.2"
-    prettier: "npm:^3.4.1"
-    tsx: "npm:^4.19.2"
-    typescript: "npm:^5.5.3"
-    typescript-eslint: "npm:^8.16.0"
-  languageName: unknown
-  linkType: soft
-
 "abbrev@npm:^2.0.0":
   version: 2.0.0
   resolution: "abbrev@npm:2.0.0"
@@ -576,6 +555,27 @@ __metadata:
   checksum: 10/6df29c35556782ca9e632db461a7f97947772c6c1d5438a81f0c873a3da3a792487e83e404d1c6c25f70513e91aa18745f6eafb1fcc3a43ecd1920b21dd173d2
   languageName: node
   linkType: hard
+
+"advent-of-code-2024@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "advent-of-code-2024@workspace:."
+  dependencies:
+    "@eslint/js": "npm:^9.16.0"
+    "@types/chai": "npm:^5"
+    "@types/lodash": "npm:^4"
+    "@types/mocha": "npm:^10"
+    "@types/node": "npm:^20.17.9"
+    chai: "npm:^5.1.2"
+    eslint: "npm:^9.16.0"
+    globals: "npm:^15.12.0"
+    lodash: "npm:^4.17.21"
+    mocha: "npm:^10.8.2"
+    prettier: "npm:^3.4.1"
+    tsx: "npm:^4.19.2"
+    typescript: "npm:^5.5.3"
+    typescript-eslint: "npm:^8.16.0"
+  languageName: unknown
+  linkType: soft
 
 "agent-base@npm:^7.0.2, agent-base@npm:^7.1.0, agent-base@npm:^7.1.1":
   version: 7.1.1

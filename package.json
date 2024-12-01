@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "tsx $0",
     "test": "mocha src/**/*.test.ts",
+    "lint": "yarn run eslint",
+    "prettier": "prettier --write .",
     "build": "tsc"
   },
   "devDependencies": {
