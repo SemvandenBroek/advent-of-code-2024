@@ -1,0 +1,3 @@
+# Pre-commit
+yarn prettier:check
+yarn lint

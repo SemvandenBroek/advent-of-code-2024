@@ -35,6 +35,7 @@ const RAW_RUNTIME_STATE =
           ["chai", "npm:5.1.2"],\
           ["eslint", "virtual:db9c8358783e8600801ce20837043463b8bca7df7c5f3420ffc8649a13d85700494df37aaaa0e80865c3b37010e982a7ad311e8942544b1c2a34c833ceb547e0#npm:9.16.0"],\
           ["globals", "npm:15.12.0"],\
+          ["husky", "npm:9.1.7"],\
           ["lodash", "npm:4.17.21"],\
           ["mocha", "npm:10.8.2"],\
           ["prettier", "npm:3.4.1"],\
@@ -802,6 +803,7 @@ const RAW_RUNTIME_STATE =
           ["chai", "npm:5.1.2"],\
           ["eslint", "virtual:db9c8358783e8600801ce20837043463b8bca7df7c5f3420ffc8649a13d85700494df37aaaa0e80865c3b37010e982a7ad311e8942544b1c2a34c833ceb547e0#npm:9.16.0"],\
           ["globals", "npm:15.12.0"],\
+          ["husky", "npm:9.1.7"],\
           ["lodash", "npm:4.17.21"],\
           ["mocha", "npm:10.8.2"],\
           ["prettier", "npm:3.4.1"],\
@@ -1754,6 +1756,15 @@ const RAW_RUNTIME_STATE =
           ["https-proxy-agent", "npm:7.0.5"],\
           ["agent-base", "npm:7.1.1"],\
           ["debug", "virtual:c9e1a4b59e37cb479517edede3bf2093b28c0ca1a9d0e517f3c345075bd1e468980b94b4957e389116607ee7155441dfd7d09e19a4229d5d09bcf06244401590#npm:4.3.7"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["husky", [\
+      ["npm:9.1.7", {\
+        "packageLocation": "./.yarn/cache/husky-npm-9.1.7-5b02eaabc4-c2412753f1.zip/node_modules/husky/",\
+        "packageDependencies": [\
+          ["husky", "npm:9.1.7"]\
         ],\
         "linkType": "HARD"\
       }]\
