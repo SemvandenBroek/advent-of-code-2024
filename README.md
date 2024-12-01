@@ -8,6 +8,7 @@ This is my attempt at [Advent Of Code 2024](https://adventofcode.com/2024/), let
 - Typescript
 - Mocha + Chai
 - Yarn
+- Husky
 
 ### Structure
 
