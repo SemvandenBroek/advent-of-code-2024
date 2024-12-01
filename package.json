@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "tsx $0",
+    "test": "mocha src/**/*.test.ts",
     "build": "tsc"
   },
   "devDependencies": {

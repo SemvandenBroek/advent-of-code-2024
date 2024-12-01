@@ -2,7 +2,7 @@ import { solution } from "./solution";
 import { expect } from "chai";
 import * as fs from "node:fs";
 
-describe("solution", () => {
+describe("Day 1 Solution", () => {
   const exampleInput = `
       3   4
       4   3
