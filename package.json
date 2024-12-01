@@ -4,11 +4,23 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "start": "tsx $0",
     "build": "tsc"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@types/chai": "^5",
+    "@types/lodash": "^4",
+    "@types/mocha": "^10",
+    "@types/node": "^20.17.9",
+    "chai": "^5.1.2",
+    "mocha": "^10.8.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.5.3"
   },
-  "private": true
+  "type": "module",
+  "private": true,
+  "packageManager": "yarn@4.5.3",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
