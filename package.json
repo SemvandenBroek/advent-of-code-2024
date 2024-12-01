@@ -1,8 +1,7 @@
 {
-  "name": "AdventOfCode2024",
+  "name": "advent-of-code-2024",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
   "scripts": {
     "start": "tsx $0",
     "test": "mocha src/**/*.test.ts",
@@ -24,7 +23,6 @@
     "typescript-eslint": "^8.16.0"
   },
   "type": "module",
-  "private": true,
   "packageManager": "yarn@4.5.3",
   "dependencies": {
     "lodash": "^4.17.21"
