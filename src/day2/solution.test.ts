@@ -3,6 +3,7 @@ import {
   ReactorMode,
   solution,
   switchReactorMode,
+  getReactorReportMutations,
 } from "./solution";
 import { expect } from "chai";
 import fs from "node:fs";
@@ -22,11 +23,23 @@ describe("Day 2 solution", () => {
     expect(result.safeReports).to.equal(2);
   });
 
+  it("should yield the correct solution with example data and problemDampener enabled", () => {
+    const result = solution(exampleInput, true);
+    expect(result.safeReports).to.equal(4);
+  });
+
   it("should result in the correct totalDistance with actual input", () => {
     const actualInput = fs.readFileSync("./src/day2/input.txt", "utf8");
     const result = solution(actualInput);
 
     expect(result.safeReports).to.equal(631);
+  });
+
+  it("should result in the correct totalDistance with actual input and problemDampener enabled", () => {
+    const actualInput = fs.readFileSync("./src/day2/input.txt", "utf8");
+    const result = solution(actualInput, true);
+
+    expect(result.safeReports).to.equal(665);
   });
 });
 
@@ -93,5 +106,15 @@ describe("switchReactorMode", () => {
     expect(switchReactorMode(ReactorMode.UNKNOWN, 1, 2)).to.equal(
       ReactorMode.DECREASING,
     );
+  });
+});
+
+describe("getReactorReportMutations", () => {
+  it("should mutate a number array by removing all values once", () => {
+    expect(getReactorReportMutations([1, 2, 3])).to.deep.equal([
+      [2, 3],
+      [1, 3],
+      [1, 2],
+    ]);
   });
 });

@@ -1,4 +1,7 @@
-export function solution(input: string) {
+export function solution(
+  input: string,
+  enableProblemDampener: boolean = false,
+) {
   const lines = input.split("\n");
   let safeReports = 0;
 
@@ -14,11 +17,32 @@ export function solution(input: string) {
       validateReport(reactorReport);
       safeReports++;
     } catch {
-      /* empty */
+      if (enableProblemDampener) {
+        const lineMutations = getReactorReportMutations(reactorReport);
+        for (const mutation of lineMutations) {
+          try {
+            validateReport(mutation);
+            safeReports++;
+            break;
+          } catch {
+            /* empty */
+          }
+        }
+      }
     }
   }
 
   return { safeReports };
+}
+
+export function getReactorReportMutations(reactorReport: number[]): number[][] {
+  const mutations: number[][] = [];
+
+  for (let i = 0; i < reactorReport.length; i++) {
+    mutations.push(reactorReport.toSpliced(i, 1));
+  }
+
+  return mutations;
 }
 
 export enum ReactorMode {
