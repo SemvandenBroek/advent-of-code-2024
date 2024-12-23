@@ -6,17 +6,17 @@ describe("Day4Puzzle", () => {
   describe("solution", () => {
     it("should result in the correct wordcount for the example", () => {
       const exampleInput = `
-      MMMSXXMASM
-      MSAMXMSMSA
-      AMXSXMAAMM
-      MSAMASMSMX
-      XMASAMXAMM
-      XXAMMXXAMA
-      SMSMSASXSS
-      SAXAMASAAA
-      MAMMMXMMMM
-      MXMXAXMASX
-    `;
+        MMMSXXMASM
+        MSAMXMSMSA
+        AMXSXMAAMM
+        MSAMASMSMX
+        XMASAMXAMM
+        XXAMMXXAMA
+        SMSMSASXSS
+        SAXAMASAAA
+        MAMMMXMMMM
+        MXMXAXMASX
+      `;
 
       const puzzle = new Day4Puzzle(exampleInput);
       const solution = puzzle.solution();
@@ -38,6 +38,37 @@ describe("Day4Puzzle", () => {
       const solution = puzzle.solution();
 
       expect(solution.totalCount).to.equal(2532);
+    });
+  });
+
+  describe("solution2", () => {
+    it("should count the total amount of X-Mas for the example input", () => {
+      const exampleInput = `
+        MMMSXXMASM
+        MSAMXMSMSA
+        AMXSXMAAMM
+        MSAMASMSMX
+        XMASAMXAMM
+        XXAMMXXAMA
+        SMSMSASXSS
+        SAXAMASAAA
+        MAMMMXMMMM
+        MXMXAXMASX
+      `;
+
+      const puzzle = new Day4Puzzle(exampleInput);
+      const solution = puzzle.solution();
+
+      expect(solution.xmasCount).to.equal(9);
+    });
+
+    it("should count the total amount of X-Mas for the actual input", () => {
+      const actualInput = fs.readFileSync("./src/day4/input.txt", "utf8");
+
+      const puzzle = new Day4Puzzle(actualInput);
+      const solution = puzzle.solution();
+
+      expect(solution.xmasCount).to.equal(1941);
     });
   });
 
@@ -256,6 +287,56 @@ describe("Day4Puzzle", () => {
       const solution = puzzle.countVertical("SAMX");
 
       expect(solution).to.equal(2);
+    });
+  });
+
+  describe("countXmas", () => {
+    it("should identify an X-Mas ltr", () => {
+      const input = `
+        M.S
+        .A.
+        M.S
+      `;
+
+      const puzzle = new Day4Puzzle(input);
+
+      expect(puzzle.matrixCount("MSMS")).to.equal(1);
+    });
+
+    it("should identify an X-Mas rtl", () => {
+      const input = `
+        S.M
+        .A.
+        S.M
+      `;
+
+      const puzzle = new Day4Puzzle(input);
+
+      expect(puzzle.matrixCount("SMSM")).to.equal(1);
+    });
+
+    it("should identify an X-Mas bottomup", () => {
+      const input = `
+        S.S
+        .A.
+        M.M
+      `;
+
+      const puzzle = new Day4Puzzle(input);
+
+      expect(puzzle.matrixCount("SSMM")).to.equal(1);
+    });
+
+    it("should identify an X-Mas topdown", () => {
+      const input = `
+        M.M
+        .A.
+        S.S
+      `;
+
+      const puzzle = new Day4Puzzle(input);
+
+      expect(puzzle.matrixCount("MMSS")).to.equal(1);
     });
   });
 });

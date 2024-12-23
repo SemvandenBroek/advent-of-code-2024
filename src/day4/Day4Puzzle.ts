@@ -8,6 +8,7 @@ interface Day4PuzzleSolution {
   verticalBackwardsCount: number;
   diagonalForwardsCount: number;
   diagonalBackwardsCount: number;
+  xmasCount: number;
 }
 
 export class Day4Puzzle extends Puzzle<Day4PuzzleSolution> {
@@ -25,10 +26,6 @@ export class Day4Puzzle extends Puzzle<Day4PuzzleSolution> {
   }
 
   override solution(): Day4PuzzleSolution {
-    console.log(
-      `Processing matrix of height ${this.matrix.length} width ${this.matrix[0].length}`,
-    );
-
     const forwardsCount = this.countHorizontal("XMAS");
     const backwardsCount = this.countHorizontal("SAMX");
     const verticalForwardsCount = this.countVertical("XMAS");
@@ -52,6 +49,11 @@ export class Day4Puzzle extends Puzzle<Day4PuzzleSolution> {
       verticalBackwardsCount,
       diagonalForwardsCount,
       diagonalBackwardsCount,
+      xmasCount:
+        this.matrixCount("MSMS") +
+        this.matrixCount("SMSM") +
+        this.matrixCount("SSMM") +
+        this.matrixCount("MMSS"),
     };
   }
 
@@ -146,5 +148,36 @@ export class Day4Puzzle extends Puzzle<Day4PuzzleSolution> {
     }
 
     return forwardsCount;
+  }
+
+  public matrixCount(sequence: "MSMS" | "SMSM" | "SSMM" | "MMSS"): number {
+    let xmasCount = 0;
+    for (let i = 1; i < this.matrix.length - 1; i++) {
+      for (let j = 1; j < this.matrix[i].length - 1; j++) {
+        if (this.matrix[i][j] != "A") {
+          continue;
+        }
+
+        if (this.matrix[i - 1][j - 1] != sequence[0]) {
+          continue;
+        }
+
+        if (this.matrix[i - 1][j + 1] != sequence[1]) {
+          continue;
+        }
+
+        if (this.matrix[i + 1][j - 1] != sequence[2]) {
+          continue;
+        }
+
+        if (this.matrix[i + 1][j + 1] != sequence[3]) {
+          continue;
+        }
+
+        xmasCount++;
+      }
+    }
+
+    return xmasCount;
   }
 }
